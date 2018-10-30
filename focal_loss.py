@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 import tensorflow as tf
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
 """
 Tensorflow实现何凯明的Focal Loss, 该损失函数主要用于解决分类问题中的类别不平衡
@@ -53,6 +55,6 @@ if __name__ == '__main__':
 
     with tf.Session() as sess:
         sess.run(tf.global_variables_initializer())
-        print sess.run(loss1)
-        print sess.run(loss2)
+        print (sess.run(loss1))
+        print (sess.run(loss2))
 
